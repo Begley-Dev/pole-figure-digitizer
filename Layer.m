@@ -10,7 +10,7 @@ classdef Layer < handle
     end
     
     methods
-        function obj = ContourLayer(contourLevel)
+        function obj = Layer(contourLevel)
             obj.contourLevel = contourLevel;
         end
         
@@ -37,7 +37,11 @@ classdef Layer < handle
         end
         
         function plot(obj)
-            patch(obj.contourVertX,obj.contourVertY, 'red');
+            for i = 1:length(obj.polygons)
+                hold on
+                plot(obj.polygons{i})
+                hold off
+            end
         end
         
     end

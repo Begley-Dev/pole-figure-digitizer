@@ -31,6 +31,10 @@ classdef LayerStack < handle
             obj.Stack{1, end} = [];
         end
         
+        function l = length(obj)
+            l = size(obj.Stack,2);
+        end
+        
 %         function outputArg = method1(obj,inputArg)
 %             %METHOD1 Summary of this method goes here
 %             %   Detailed explanation goes here
